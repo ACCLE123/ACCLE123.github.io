@@ -2,4 +2,4 @@
 ## my name is yangqi
 
 
-- [first] (./x/hello.md)
+- [first](./x/hello.md)
