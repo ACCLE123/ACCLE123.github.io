@@ -4,12 +4,14 @@
 [dockerhub](https://hub.docker.com/)
 
 #### 概念
-- contain 
+- container
 - image
 - volume
 - network
 
 #### 指令
+<img src="./images/dockerbase.png" alt="截屏2024-02-13 21.53.52" style="zoom:50%;" />
+
 ```bash
 docker pull
 docker images
@@ -20,6 +22,7 @@ docker rm
 docker rmi
 ...
 ```
+
 在.zshrc中做一个影射
 ```bash
 alias docker-ps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}\t{{.Names}}'"
@@ -36,3 +39,8 @@ alias docker-ps-a="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Ports}}\t{{
 ```
 
 *mac下挂载volume volume存储在docker自己创建的虚拟机中*
+
+#### dockerfile
+
+
+#### dockercompose
