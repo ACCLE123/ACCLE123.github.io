@@ -10,7 +10,7 @@
 - network
 
 #### 指令
-<img src="./images/dockerbase.png" alt="截屏2024-02-13 21.53.52" style="zoom:50%;" />
+<img src="./images/dockerbase.png" alt="截屏2024-02-13 21.53.52" style="zoom:100%;" />
 
 ```bash
 docker pull
@@ -36,11 +36,42 @@ alias docker-ps-a="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Ports}}\t{{
 --name: 指定contain名字
 -v: 进行挂载，~/myvolume:usr/path or volume:/usr/path
 -e: 添加环境变量
+-it 容器通过bash运行
 ```
 
 *mac下挂载volume volume存储在docker自己创建的虚拟机中*
 
 #### dockerfile
+` docker build -t image_name .`
+制作ubuntu系统带着c环境的例子
+```Dockerfile
+# Use an official Ubuntu runtime as a parent image
+FROM ubuntu:latest
 
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Update and install necessary dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    g++-12 \
+    clang-15
+
+# Set the default C++ compiler alternatives
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 \
+    && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 100 \
+    && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 100
+
+# Set environment variables
+ENV CC=gcc
+ENV CXX=g++
+
+# Clean up
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# CMD specifies the command to run on container start
+CMD ["/bin/bash"]
+
+```
 
 #### dockercompose
