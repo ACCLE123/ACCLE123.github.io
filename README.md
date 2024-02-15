@@ -15,9 +15,17 @@
 - [docker](./tools/docker.md)
 - [git](./tools/git.md)
 - [vim](./tools/vim.md)
+- [tmux](./tools/tmux.md)
+- [cmake](./tools/cmake.md)
 
-一个画图的软件
-[excalidraw](https://excalidraw.com/)
+
+#### website
+
+
+- [gemini](https://gemini.google.com/)
+- [chatgpt](https://chat.openai.com/)
+- [openai](https://platform.openai.com/)
+- [excalidraw](https://excalidraw.com/)
 
 
 
