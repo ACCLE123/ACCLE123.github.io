@@ -72,5 +72,5 @@ nvim 的相关配置 在~/.config/nvim
 `:HopWordMW`
 MW: multi window
 多窗口跳转 使用的关键是看准地方
-
+<C-hjkl>实现在tmux中跳转
 

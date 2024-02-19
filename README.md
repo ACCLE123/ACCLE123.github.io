@@ -16,7 +16,6 @@
 - [git](./tools/git.md)
 - [vim](./tools/vim.md)
 - [tmux](./tools/tmux.md)
-- [cmake](./tools/cmake.md)
 
 
 #### website
@@ -43,3 +42,5 @@
 
 #### other
 
+- [streaming media](./other/streaming.md)
+- [cmake](./other/cmake.md)
