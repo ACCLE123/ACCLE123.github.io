@@ -49,12 +49,19 @@
 
 对视频流进行处理
 
+##### [flask](https://github.com/pallets/flask)
+
+搭建简单的python web服务器
 
 ---
 
 #### arch
 
+##### 单个摄像头架构
 <img src="./images/arch0.png"  style="zoom:70%;" />
+
+##### 多个摄像头架构
+<img src="./images/arch1.png"  style="zoom:70%;" />
 
 ---
 
@@ -65,6 +72,8 @@
 * rtsp: 应用层，基于tcp，用于控制播放、暂停、定位
 * rtp: 应用层，基于udp，用于传输流媒体数据
 * rtcp: 应用层，rtp的控制协议，用来确保流媒体数据的传输质量
+* websocket: 基于tcp，全双工通行
+  > http适合传输文本，并且是请求响应式，websocket可以传输二进制或者文本
 
 ---
 
