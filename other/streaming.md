@@ -63,6 +63,9 @@
 ##### 多个摄像头架构
 <img src="./images/arch1.png"  style="zoom:70%;" />
 
+##### theory
+<img src="./images/arch2.png"  style="zoom:70%;" />
+
 ---
 
 #### concept
@@ -73,6 +76,19 @@
 * rtp: 应用层，基于udp，用于传输流媒体数据
 * rtcp: 应用层，rtp的控制协议，用来确保流媒体数据的传输质量
 * websocket: 基于tcp，全双工通行
+
+##### codec 
+
+编码解码器
+
+h264 h265 vp9 avc 是视频的编码解码器
+
+ackii utf-8 是文字的编码解码器
+
+.mp4:
+mp4是一种多媒体容器格式：存储音频、视频、字幕和其他多媒体数据
+mp4常用h264作为编解码器
+
 
 ---
 
@@ -134,3 +150,13 @@ websocket 是全双工通信
 3. chatgpt 2和3 一起使用，想尽办法一个功能一个功能实现
 4. 出现bug: 搜索(中文 英文) \ chatgpt \ github issue 
 
+##### producer and consumer
+
+这个是非常常见的模型
+要点
+1. queue需要加锁，不可以一边进一边出
+2. produce需要加锁
+3. consume需要加锁
+
+可以使用数据库表作为queue这样所有的同步问题将会解决
+缺点是将数据存到类硬盘 速度会慢
