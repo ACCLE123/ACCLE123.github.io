@@ -41,8 +41,19 @@
 
 
 #### algorithm
+之前算法学了很久 一直没体会到精髓
+学算法的一些要点:
+1. 算法流程
+2. 写代码
+3. 证明
 
+有很多oj平时要多练
 
+多看wiki
+[oi wiki](https://oi-wiki.org/)
+
+- [ccf-scp](algorithm/ccf-scp.md)
+- [graph](algorithm/graph.md)
 
 #### other
 
