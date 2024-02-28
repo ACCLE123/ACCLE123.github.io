@@ -53,7 +53,11 @@
 [oi wiki](https://oi-wiki.org/)
 
 - [ccf-scp](algorithm/ccf-scp.md)
+
+
 - [graph](algorithm/graph.md)
+- [dp](algorithm/dp.md)
+- [data_structure](algorithm/data_structure.md)
 
 #### other
 

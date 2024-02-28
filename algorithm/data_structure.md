@@ -1,0 +1,12 @@
+### data_structure
+
+
+#### 线段树
+
+segment tree
+
+以 logn 的复杂度 进行 区间修改 单点修改 区间查询
+
+
+
+
