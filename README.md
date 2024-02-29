@@ -53,7 +53,7 @@
 [oi wiki](https://oi-wiki.org/)
 
 - [ccf-scp](algorithm/ccf-scp.md)
-
+- [leetcode](algorithm/leetcode.md)
 
 - [graph](algorithm/graph.md)
 - [dp](algorithm/dp.md)
@@ -62,4 +62,5 @@
 #### other
 
 - [streaming media](./other/streaming.md)
+- [java & python](./other/python&java.md)
 - [cmake](./other/cmake.md)

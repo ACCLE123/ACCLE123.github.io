@@ -127,6 +127,9 @@ FFmpeg用来处理rtsp请求和发送rtsp请求
 ffmpeg 处理二进制内容转化为视频
 游览器 处理文本内容转化为网页
 
+还有一个类似的工具叫 gstreamer
+
+ffmpeg 和 gstreamer 相当于游览器的内核   opencv 相当于浏览器
 
 ##### http和websocket
 
