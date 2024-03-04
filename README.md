@@ -1,12 +1,5 @@
 ### yangqi
 
-*******
-
-#### blogs & github
-- [martins3 blog](https://martins3.github.io/)
-- [pku self learning](https://github.com/PKUFlyingPig/cs-self-learning)
-- [jiajunhuang blog](https://github.com/jiajunhuang/blog)
-
 
 *******
 
