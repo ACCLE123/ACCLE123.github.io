@@ -17,3 +17,18 @@
 #### net
 
 可以用一些网络的方法进行实现
+
+
+
+#### jni
+
+> 最酷的方法
+
+java 通过 jni 调用本地方法 在本地方法中调用 python
+
+##### jvm
+
+<img src="./images/jvm.png"  style="zoom:70%;" />
+
+
+native method interface : java的接口 由 c++代码实现
