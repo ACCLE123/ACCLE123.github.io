@@ -52,6 +52,8 @@
 - [graph](algorithm/graph.md)
 - [dp](algorithm/dp.md)
 - [data_structure](algorithm/data_structure.md)
+一些有趣的算法
+- [simulate_annealing](algorithm/simulate_annealing.md)
 
 #### other
 

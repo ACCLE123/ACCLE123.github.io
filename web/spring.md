@@ -102,4 +102,16 @@ getBean() 是 BeanFactory 中的方法
 2. gclib动态代理： 在类的基础上生成新的子类
 
 
+#### BeanReference
+
+bean 用 String 作为索引, String是bean的地址
+所以BeanReference最关键的字段就是`String beanName`
+
+可以理解为BeanReference就是String
+
+
+#### Resource
+
+Resouce = InputStream
+ResourceLoader 包装了一个返回 Resource 的方法
 
