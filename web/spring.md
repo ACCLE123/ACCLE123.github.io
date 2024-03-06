@@ -2,6 +2,17 @@
 
 [mini-spring](https://github.com/DerekYRC/mini-spring/blob/main/changelog.md#%E5%9F%BA%E7%A1%80%E7%AF%87IoC)学习记录
 
+#### thinking
+大量的类进行不断的继承和组合 会非常的复杂 理解关键类的作用才可以理解整个系统
+猜一个类的作用：
+1. 看类中包含的数据结构 (继承or组合)
+2. 看类的名字
+
+简单类分为两种：
+1. 数据结构类(一般都比较关键)
+2. 方法类
+
+
 #### bean scope
 
 通过`@scope`来修改bean的作用域
@@ -112,6 +123,26 @@ bean 用 String 作为索引, String是bean的地址
 
 #### Resource
 
-Resouce = InputStream
-ResourceLoader 包装了一个返回 Resource 的方法
+Resouce(String) 通过这个String得到的InputStream
+ResourceLoader(方法类) 包装了一个返回 Resource 的方法
+
+
+#### BeanDefinition 
+存储了Bean的类信息 和 具体属性值信息
+
+#### BeanDefinitionRegistry
+BeanDefinition 注册处
+BeanFactory继承了他
+
+一个接口 包含操作beanDefinitionMap的各种方法
+
+#### Reader
+
+包含了BeanDefinitionRegistry和ResourceLoader
+
+#### BeanFactoryPostProcessor & BeanPostProcessor
+
+BeanPostProcessor
+
+
 

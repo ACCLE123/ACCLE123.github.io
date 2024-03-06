@@ -61,3 +61,5 @@
 - [java & python](./other/python&java.md)
 - [cmake](./other/cmake.md)
 - [g++](./other/g++.md)
+- [jvm](./other/jvm.md)
+- [design pattern](./other/design.md)
