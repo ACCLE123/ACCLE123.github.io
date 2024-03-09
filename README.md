@@ -52,6 +52,10 @@
 - [graph](algorithm/graph.md)
 - [dp](algorithm/dp.md)
 - [data_structure](algorithm/data_structure.md)
+- [search](algorithm/search.md)
+
+
+
 一些有趣的算法
 - [simulate_annealing](algorithm/simulate_annealing.md)
 
@@ -63,3 +67,4 @@
 - [g++](./other/g++.md)
 - [jvm](./other/jvm.md)
 - [design pattern](./other/design.md)
+- [gpt&google&wechat](./other/ggw.md)

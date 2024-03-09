@@ -31,3 +31,6 @@ factory method pattern = factory pattern = virtual constructor pattern = polymor
 factory: 抽象工厂
 
 concrete factory: 具体工厂
+
+
+为了简化使用流程，可以在factory中添加product使用的方法
