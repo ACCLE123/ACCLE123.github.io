@@ -1,7 +1,7 @@
-### xv6
+## xv6
 
 
-#### 参考网站
+### 参考网站
 
 - [offical theory](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
 - [offical](https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf)
@@ -9,6 +9,15 @@
 - [doc](https://pdos.csail.mit.edu/6.828/2012/xv6/book-rev7.pdf)
 - [tzyt](https://ttzytt.com/2022/07/xv6_lab1_record/)
 - [csdn deadpool](https://blog.csdn.net/weixin_44465434/article/details/111524650)
+- [whileskies](https://github.com/whileskies/xv6-labs-2020/tree/main)
+
+### lab1 
+
+[lab1](https://pdos.csail.mit.edu/6.828/2021/labs/util.html)
+
+#### concept
+
+
 #### pipe
 
 ```c++
@@ -59,3 +68,57 @@ int main(int argc, char* argv[]) {
 1. 每个只关闭了一端 对这个close不是特别理解
 
 #### primes
+
+#### find
+
+#### xargs
+
+#### thinking
+
+1. 比较重要的函数 read write fork exec pipe
+2. 需要再次完成一遍 因为不是独立完成的
+
+### lab2
+
+#### concept
+
+- multiplexing
+- isolation
+- interaction
+
+three cpu mode
+- machine mode
+- supervisor mode(内核态)
+- user mode(用户态)
+
+
+explain: 
+
+privilege code is programmed by assmble. it can control the hardware.
+
+machine mode has full privilege. cpu start in machine mode. xv6 executes a few lines in machine mode and then changes to supervisor mode.
+
+in supervisor mode, cpu can execute privileged instructions. if an application in user mode attempts to execute a privileged instruction, then the cpu doesn't execute the instruction, but switches to supervisor mode so that supervisor-code can terminate the application.
+
+An application can execute only user-mode instructions and is said to be running in user space.the software in supervisor mode is said to be running in kernel space. The software running in kernel space is called the kernel
+
+
+- monolithic (单体内核) (unix)
+- microkernel (微内核) (mach)
+
+[mach](https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/KernelProgramming/Mach/Mach.html)
+
+[apple archive](https://developer.apple.com/library/archive/navigation/)
+
+
+monolithic: entire operating system resides in the kernel.
+microkernel: operating system code execute the bulk of operating system in user mode
+
+- process
+
+the unit of isolation in os is a process.
+
+
+#### 
+
+

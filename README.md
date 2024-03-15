@@ -24,6 +24,10 @@
 #### network
 
 
+#### os
+- [xv6](./os/xv6.md)
+
+
 
 #### database
 
@@ -67,4 +71,4 @@
 - [g++](./other/g++.md)
 - [jvm](./other/jvm.md)
 - [design pattern](./other/design.md)
-- [gpt&google&wechat](./other/ggw.md)
+- [gpt&google&wechat](./other/design.md)
