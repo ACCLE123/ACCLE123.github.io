@@ -3,7 +3,7 @@
 
 ### 参考网站
 
-- [offical theory](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
+- [schedule](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
 - [offical](https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf)
 - [中文文档](https://th0ar.gitbooks.io/xv6-chinese/content/content/chapter0.html)
 - [doc](https://pdos.csail.mit.edu/6.828/2012/xv6/book-rev7.pdf)
@@ -120,5 +120,4 @@ the unit of isolation in os is a process.
 
 
 #### 
-
 
