@@ -47,3 +47,8 @@ struct UnionFind {
     int size(int x) { return -d[find(x)]; }
 };
 ```
+
+
+#### trie and kmp
+
+

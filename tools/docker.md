@@ -73,6 +73,13 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 CMD ["/bin/bash"]
 
 ```
-
+启动容器
+`docker run -it -d --name my_linux image_name`
+进入容器
+`docker exec -it container_name bash `
 
 #### dockercompose
+
+
+
+#### java
