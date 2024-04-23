@@ -36,7 +36,7 @@ categories: false
 tags: false
 
 # theme color
-main_color: sun # forest | grass | sky | sun | sea
+main_color: forest # forest | grass | sky | sun | sea
 
 # google Analytics
 google_analytics_id: xx-xxxxxxx-xx
