@@ -1,5 +1,5 @@
 ---
-title: shortest path
+title: shortest-path
 date: 2024-04-23 19:20:30
 tags:
 ---
