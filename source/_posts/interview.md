@@ -24,8 +24,6 @@ Move on, you have a bright future.
 
 ### Maybe wrong
 
-confidence
-
 The manager asked me, 'can I hold up in the high-pressure situation'. I said, 'maybe I can, I can challenge this'.
 
 But this answer was very harmful, I need to said 'Yes, I can, because others can do, I can do too'.
