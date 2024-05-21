@@ -194,3 +194,67 @@ redis中使用拉链法来解决hash冲突
 2. set操作 作用与 表1
 
 
+
+#### skiplist
+
+跳跃表
+
+维护有序集合的数据结构
+
+```c++
+typedef struct zskiplistNode {
+
+    // 成员对象
+    robj *obj;
+
+    // 分值
+    double score;
+
+    // 后退指针
+    struct zskiplistNode *backward;
+
+    // 层
+    struct zskiplistLevel {
+
+        // 前进指针
+        struct zskiplistNode *forward;
+
+        // 跨度
+        unsigned int span;
+
+    } level[];
+
+} zskiplistNode;
+
+```
+
+```c++
+
+typedef struct zskiplist {
+
+    // 表头节点和表尾节点
+    struct zskiplistNode *header, *tail;
+
+    // 表中节点的数量
+    unsigned long length;
+
+    // 表中层数最大的节点的层数
+    int level;
+
+} zskiplist;u
+
+```
+
+
+
+#### intset
+
+整数集合
+
+#### ziplist
+
+压缩链表
+
+#### object
+
+对象
