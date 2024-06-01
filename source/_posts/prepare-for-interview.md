@@ -147,3 +147,7 @@ static class Entry extends WeakReference<ThreadLocal<?>> {
 value是强引用，key是弱引用
 
 导致key被回收但是value没有被回收
+
+#### rabbitmq 消息不丢失
+
+ 
