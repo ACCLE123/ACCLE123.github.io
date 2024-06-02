@@ -148,6 +148,35 @@ value是强引用，key是弱引用
 
 导致key被回收但是value没有被回收
 
-#### rabbitmq 消息不丢失
+### springboot
+
+#### spring bean生命周期
+
+ 
+#### springboot 自动配置原理
+
+`@SpringBootApplication` 注解下
+
+```java
+@SpringBootConfiguration
+@EnableAutoConfiguration
+@ComponentScan
+```
+
+`@SpringBootConfiguration` Configuration注解 
+
+`@ComponentScan` 包扫描注解，默认扫描Application类在的包和他的子包
+
+`@EnableAutoConfiguration` 该注解用于实现自动装配
+
+在`@EnableAutoConfiguration` 下 存在注解 `@Import(AutoConfigurationImportSelector.class)` 导入ImportSelector类，该类实现了方法`selectImports`，这个方法从META的文件中导入类的全类名,将类放入ioc容器中
+
+
+#### spring事物失效场景
+
+1. 抛出异常为检查异常
+2. 没有抛出异常
+3. 方法为private
+...
 
  

@@ -4,6 +4,7 @@ date: 2024-06-01 18:51:32
 tags:
 ---
 
+life is unfair, kill yourself or get over it.
 
 ### Comparison
 
