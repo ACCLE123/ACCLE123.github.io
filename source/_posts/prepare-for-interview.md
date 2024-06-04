@@ -4,7 +4,7 @@ date: 2024-05-23 16:14:57
 tags:
 ---
 
-### java 八股
+### java
 
 #### 静态代码块执行时机
 
@@ -56,7 +56,7 @@ nio: Non-Blocking IO
 1. nio面向buffer(使用直接内存)进行读写，使用channel进行双向通信，io面向字节流进行读写
 2. nio可以使用非阻塞读写，使用selector实现多路复用，io不可以
 
-#### jmm
+#### jvm内存结构
 
 线程私有: 程序计数器， java栈，c栈
 线程共享: 方法区、java堆
@@ -75,38 +75,6 @@ java堆: 存储对象和数组，gc进行管理，分为新生代，老年代，
 
 本地内存(native memory): 不由jvm管理，由操作系统，里面有元空间 和 直接内存
 
-#### 单例模式
-
-饿汉式
-
-```java
-class Singleton {
-    public static final Singleton instance = new Singleton();
-    private Singleton() {}
-    public static Singleton getInstance() {
-        return instance;
-    }
-}
-```
-
-懒汉式
-```java
-class Singleton {
-    public static volatile Singleton instance;
-    private Singleton() {}
-    public static Singleton getInstance() {
-        if (instance == null) {
-            synchronized {
-                if (instance == null) {
-                    instance = new Singleton();
-                }
-            }
-        }
-        return instance;
-    }
-}
-
-```
 
 #### ThreadLocal
 
@@ -147,6 +115,8 @@ static class Entry extends WeakReference<ThreadLocal<?>> {
 value是强引用，key是弱引用
 
 导致key被回收但是value没有被回收
+
+
 
 ### springboot
 
@@ -285,4 +255,153 @@ Cache Aside(旁路缓存)
 AOF: 将执行的指令追加到一个日志文件中
 
 RDB: 在某一时刻，将全部数据以二进制的方式写入硬盘
+
+
+### juc
+
+#### synchronized底层原理
+
+Monitor 管程
+
+重量级锁
+
+jvm底层使用c++实现，用于管理对象锁。
+
+
+```
+WaitSet
+EntryList
+Owner
+```
+
+对象调用wait方法后,线程会到WaitSet(Waiting).
+
+没抢到锁的线程,会到EntryList(BLOCKED).
+
+##### 重量级锁
+1. 阻塞和唤醒线程，操作系统会从用户态切换内核态，这个过程很耗时
+2. 线程被阻塞后，需要保存状态，进行上下文切换
+
+jdk1.6 引入 轻量级锁 和 偏向锁。 在没有竞争的情况下 使用轻量级锁 或 偏向锁
+
+##### 轻量级锁
+
+每次加锁 用cas操作加锁对象中对象头的两位
+
+##### 偏向锁
+
+
+每次加锁 用cas操作加锁对象中对象头的两位 
+会记录线程id, 在同一个线程进行加锁时(锁重入)， 不会反复cas
+
+
+#### java内存模型
+
+工作内存(本地内存): 线程私有
+
+主内存: 线程共享
+
+#### cas
+
+比较交换: 是一个原子操作, 调用native方法实现
+
+应用在aqs和原子变量
+
+cas操作用于实现乐观锁
+
+#### volatile
+
+保证可见行
+
+阻止指令重排序
+
+
+#### ConcurrentHashMap
+
+HashMap: 数组+链表+红黑树
+
+ConcurrentHashMap在发生冲突时，会锁住头节点(链表或者红黑树)
+
+
+
+### design pattern
+
+#### 单例模式
+
+饿汉式
+
+```java
+class Singleton {
+    public static final Singleton instance = new Singleton();
+    private Singleton() {}
+    public static Singleton getInstance() {
+        return instance;
+    }
+}
+```
+
+懒汉式
+```java
+class Singleton {
+    public static volatile Singleton instance;
+    private Singleton() {}
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+
+```
+
+#### 工厂模式
+
+##### 简单工厂
+
+##### 工厂
+
+常用
+
+
+##### 抽象工厂
+
+
+
+#### 策略模式
+
+
+
+### jvm
+
+#### gc垃圾判断
+
+1. 引用分析
+2. 可达性分析
+
+可达性分析: 与gcroot相连的类
+
+gcroot:
+1. java栈 栈帧中本地变量表中 的变量
+2. 静态变量 静态常量
+2. c栈中的变量
+
+#### gc垃圾回收算法
+
+##### 标记清楚
+
+
+##### 标记整理
+
+
+##### 复制
+
+
+
+#### 类的加载
+
 
