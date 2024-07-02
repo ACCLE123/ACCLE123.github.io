@@ -1,5 +1,5 @@
 ---
-title: 6.2 intership
+title: 6.2 internship
 date: 2024-07-02 10:31:29
 tags:
 ---
