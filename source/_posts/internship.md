@@ -102,6 +102,7 @@ func DoingSomething(i interface{}) {
 ### k8s
 
 [crash course](https://www.youtube.com/watch?v=s_o8dwzRlu4)
+[k8s note](https://www.yuque.com/fairy-era/yg511q/szg74m)
 
 #### node 和 pod
 
