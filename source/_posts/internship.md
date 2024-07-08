@@ -106,7 +106,9 @@ func DoingSomething(i interface{}) {
 
 #### node 和 pod
 
-node分为: control plane nodes 和 worker nodes
+node就是一台电脑（物理机或虚拟机）
+
+node分为: control plane nodes (master) 和 worker nodes
 
 ##### control plane nodes
 
@@ -154,6 +156,25 @@ etcd位置status
 
 #### minikube kubectl
 
+kubectl 需要配置config
+
+每一个配置对应一个集群 
+
+```bash
+alias kl='kubectl config get-contexts '
+alias ku='kubectl config use-context'
+```
+
+配置之后使用`kl`来查看全部集群
+使用`ku`来进行切换集群
+
+#### prometheus
+
+#### zipkin
+
+#### istio
+
 
 ### gitlab ci/cd
+
 
