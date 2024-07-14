@@ -292,10 +292,9 @@ redis宕机:
 
 Cache Aside(旁路缓存)
 
-
-
-
 #### redis的持久化操作
+
+[persistance](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/)
 
 AOF: 将执行的指令追加到一个日志文件中
 
