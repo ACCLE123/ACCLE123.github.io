@@ -47,7 +47,7 @@ cur = cur->next;
 
 ### 3
 
-hash table ans two-pointer algorithm
+hash table and two-pointer algorithm
 
 ### 4
 
@@ -56,8 +56,32 @@ hard
 
 it is a hard problem contained many border problem.
 
+find k in two ordered sequences
+
+```c++
+double findk(vector<int>& nums1, int i, vector<int>& nums2, int j, int k) {
+    if (nums1.size() - i > nums2.size() - j) return find(nums2, j, nums1, i, k);
+    if (nums1.size() == i) return nums2[j + k - 1];
+    if (k == 1) return min(nums1[i], nums2[j]);
+
+    int si = min(i + k / 2, (int)nums1.size()), sj = j + (k - k / 2);
+
+    if (nums1[si - 1] < nums2[sj - 1]) return find(nums1, si, nums2, j, k - (si - i));
+    else return find(nums1, i, nums2, sj, k - (sj - j));
+}
+```
+
 ### 5
 
 hard
 
 two-pointer
+
+### 10
+
+dp
+
+the `*` can match 0 or n
+
+### 11
+
