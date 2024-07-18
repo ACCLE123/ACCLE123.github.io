@@ -4,6 +4,13 @@ date: 2024-07-14 13:20:54
 tags:
 ---
 
+### 语法
+
+#### defer
+
+#### select
+
+
 ### GMP
 
 代码在 `runtime/runtime2.go` 和 `runtime/proc.go`
@@ -43,4 +50,6 @@ The Go memory model specifies the conditions under which reads of a variable in 
 
 互斥锁`sync.WaitGroup` 和 `chan` 都可以实现 `Happens-before`
 
+
+### 
 
