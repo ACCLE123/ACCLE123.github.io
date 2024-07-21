@@ -25,6 +25,6 @@ cookie: 存储在游览器的kv对，每次给服务器请求都会带上cookie
 
 session: 前端发起请求时，服务器生成一个sessionId存储到数据库，前端每次发请求带着sessionId就不需要用户名密码.
 
-session方案会在服务器存储sessionId,用户多会导致存储大量sessionId.
+session: 方案会在服务器存储sessionId,用户多会导致存储大量sessionId.
 
 token: jwt技术(json web token), 服务器保存jwt的密文, 游览器通过cookie的方式保存jwt token
