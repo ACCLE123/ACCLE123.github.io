@@ -3,9 +3,7 @@ title: docker
 date: 2024-06-08 14:22:21
 tags:
 ---
-### docker
-
-> 配环境问题已经困扰了我不是一天两天，多懂一点docker可以少很多麻烦
+### docker 使用
 
 [dockerhub](https://hub.docker.com/)
 
@@ -94,3 +92,19 @@ CMD ["/bin/bash"]
 
 
 #### java
+
+
+### docker原理
+
+实现docker的关键技术是 namespace 和 cgroups
+
+#### namespace
+
+6个namespace:
+mount uts pic pid network user
+
+
+#### cgroups
+
+
+
