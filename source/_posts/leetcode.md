@@ -99,3 +99,41 @@ int jump(vector<int>& nums) {
     return f[n - 1];
 }
 ```
+
+### 55 跳跃游戏
+
+
+```c++
+bool canJump(vector<int>& nums) {
+    int n = nums.size();
+    int maxd = 0;
+    
+    for (int i = 0; i <= min(n - 1, maxd); i++) {
+        maxd = max(maxd, i + nums[i]);
+        cout << i + nums[i] << ' ';
+    }
+    cout << endl;
+
+    return maxd >= n - 1;
+}
+```
+
+### 134 加油站
+
+```c++
+int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+    int n = gas.size();
+    for (int i = 0; i < n; ) {
+        int j;
+        int left = 0;
+        for (j = 0; j < n; j++) {
+            left += gas[(i + j) % n] - cost[(i + j) % n];
+            if (left < 0) break;
+        }
+        if (j == n) return i;
+        else i += j + 1;
+    }
+    return -1;
+}
+```
+
