@@ -40,3 +40,53 @@ string: 数据结构简单，但无法只修改其中单条字段
 3. 查询string 假如没有 缓存空值
 4. 查询string 假如没有 开线程构建缓存
 
+
+### 分布式id
+
+#### 特性
+1. 无重复
+2. 单调增
+3. 安全
+
+#### 常见解决方案
+1. 雪花算法
+2. [leaf](https://tech.meituan.com/2017/04/21/mt-leaf.html)
+3. redis
+
+### 分布式锁
+
+#### 悲观锁 乐观锁
+
+乐观锁 和 悲观锁 作用于 数据库的 行 或 表
+
+mvcc的实现采用了乐观锁的思想
+
+悲观锁
+
+```sql
+
+BEGIN;
+
+SELECT stock FROM products WHERE product_id = 1 FOR UPDATE;
+
+UPDATE products SET stock = stock - 1 WHERE product_id = 1;
+
+COMMIT;
+
+```
+
+乐观锁
+
+```sql
+
+SELECT stock FROM products WHERE product_id = 1;
+
+```
+
+上面两种锁都是mysql锁
+
+#### redis锁
+
+利用setnx
+
+
