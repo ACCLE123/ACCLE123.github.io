@@ -4,6 +4,12 @@ date: 2024-07-18 12:04:00
 tags:
 ---
 
+io多路复用的意思是
+
+用一个线程 来处理多个client socket
+
+-----
+
 linux的io多路复用 epoll
 macos、freeBSD多路复用 kqueue
 
@@ -53,6 +59,17 @@ There are two file descriptors kind blocking and non-blocking. The blocking desc
 2. 避免死锁
 
 
+### select poll epoll 细节解读
 
+
+
+
+
+
+### 项目
+
+1. 我的服务器 运行io多路复用程序
+2. brew install 下载client
+3. 可以用client进行多人聊天
 
 

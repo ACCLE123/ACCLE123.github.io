@@ -6,6 +6,50 @@ tags:
 
 ### 语法
 
+#### array slice
+
+array
+
+```go
+var a [3]int
+var b = [...]int{1, 2, 3, 4, 5}
+var c = [...]int{0: 5, 1: 4, 2: 3, 3: 2, 4: 1}
+var d = [...]int{3: 1, 2}
+fmt.Println(a)
+fmt.Println(b)
+fmt.Println(c)
+fmt.Println(d)
+```
+
+
+#### chan
+
+```go
+func printNumber(id int, ch chan int, nextCh chan int) {
+	for {
+		num := <-ch
+		time.Sleep(1 * time.Second)
+		fmt.Println("Goroutine", id, ":", num)
+		nextCh <- num + 1
+	}
+}
+
+func main() {
+	numChans := 3 
+	chans := make([]chan int, numChans)
+
+	for i := 0; i < numChans; i++ {
+		chans[i] = make(chan int)
+	}
+	for i := 0; i < numChans; i++ {
+		go printNumber(i, chans[i], chans[(i+1)%numChans])
+	}
+
+	chans[0] <- 1
+	select {}
+}
+```
+
 #### defer
 
 #### select
