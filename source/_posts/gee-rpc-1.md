@@ -1,5 +1,5 @@
 ---
-title: gee-rpc 1
+title: gee-rpc
 date: 2024-09-13 10:39:55
 tags:
 ---
@@ -21,36 +21,78 @@ one connection many requests
 */
 
 ```
+
 ---
 
+#### rpc全流程
+
+![rpc](https://ACCLE123.github.io/picx-images-hosting/image.2rv3bggfz7.webp)
+
+
+#### rpc条件
+
+`func (t *T) MethodName(argType T1, replyType *T2) error`
+
+
+---
 
 ### 数据结构
 
 ---
 
-#### 数据
+#### server
 
 ```go
 type Option struct {
 	MagicNumber int
 	CodecType   codec.Type
 }
-```
 
-```go
 type Header struct {
 	ServiceMethod string
 	Seq           uint64
 	Error         string
 }
-```
 
-```go
 type request struct {
 	h            *codec.Header
 	argv, replyv reflect.Value
 }
+
+type Server struct{}
 ```
+
+---
+
+#### client
+
+```go
+type Call struct {
+	Seq           uint64
+	ServiceMethod string
+	Args          interface{}
+	Reply         interface{}
+	Error         error
+	Done          chan *Call
+}
+
+func (call *Call) done() {
+	call.Done <- call
+}
+
+type Client struct {
+	cc       codec.Codec
+	opt      *Option
+	sending  sync.Mutex // protect cc
+	header   codec.Header
+	mu       sync.Mutex
+	seq      uint64
+	pending  map[uint64]*Call
+	closing  bool // user has called Close
+	shutdown bool // server has told us to stop
+}
+```
+
 
 ---
 
@@ -131,6 +173,8 @@ func handleRequest(request Request, wg sync.WaitGroup, sending sync.Mutex) {
     cc.Write(something)
 }
 ```
+
+
 
 
 
